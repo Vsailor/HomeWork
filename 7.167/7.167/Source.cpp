@@ -26,7 +26,7 @@ double findRoot(double a, double b) {
 	}
 }
 
-void setBorders(double &a, double &b) {
+int setBorders(double &a, double &b) {
 	bool badInput = false;
 	do {
 		cout << "a,b must be so that one root exist" << endl;
@@ -41,13 +41,19 @@ void setBorders(double &a, double &b) {
 			badInput = false;
 		}
 	} while (badInput);
+	return 0;
 }
 
 void main() {
 	cout << "Roots of the equation x^3-7x-1=0 : {-2.57; -0.14; 2.71}" << endl;
 	double a, b; // borders to find only one root
-	setBorders(a,b);
-	double root = findRoot(a,b);
+
+	int (*p)(double &, double &) = NULL;
+	p = setBorders;
+	p(a,b);
+	double (*t)(double, double) = NULL;
+	t = findRoot;
+	double root = t(a,b);
 	cout << "Root: x = " << root << "; y = " << f(root) << endl;
 	system("pause");
 }

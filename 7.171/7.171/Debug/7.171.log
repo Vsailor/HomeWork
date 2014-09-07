@@ -1,13 +1,9 @@
-﻿Build started 07.09.2014 14:32:25.
-     1>Project "C:\Users\Иван\Desktop\Snake\Snake\7.171\7.171\7.171.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
-         Source.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Иван\Desktop\Snake\Snake\7.171\Debug\7.171.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Иван\Desktop\Snake\Snake\7.171\Debug\7.171.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Иван\Desktop\Snake\Snake\7.171\Debug\7.171.lib" /MACHINE:X86 Debug\Source.obj
-         7.171.vcxproj -> C:\Users\Иван\Desktop\Snake\Snake\7.171\Debug\7.171.exe
-     1>Done Building Project "C:\Users\Иван\Desktop\Snake\Snake\7.171\7.171\7.171.vcxproj" (Build target(s)).
+﻿Build started 07.09.2014 23:55:28.
+     1>Project "C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\7.171\7.171\7.171.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         7.171.vcxproj -> C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\7.171\Debug\7.171.exe
+     1>Done Building Project "C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\7.171\7.171\7.171.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.21
+Time Elapsed 00:00:00.05

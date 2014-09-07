@@ -43,8 +43,15 @@ void main() {
 	cout << "How many points do you want?" << endl;
 	int n;
 	cin >> n;
-	Pos *points = input(n);
-	Pos result = centreOfGravity(points, n);
+
+	Pos *(*p)(int) = NULL;
+	p = *input;
+	Pos *points = p(n);
+
+	Pos (*s)(Pos*,int) = NULL;
+	s = centreOfGravity;
+	Pos result = s(points, n);
+
 	cout << "Mass center: x = " << result.x << "; y = " << result.y << endl; 
 	system("pause");
 }

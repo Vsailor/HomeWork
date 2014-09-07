@@ -9,7 +9,7 @@ bool Q(double x, double a, double b) {
 	return false;
 }
 
-void inputVector(int n) {
+int inputVector(int n) {
 	ofstream f;
 	f.open("file.txt", ios::out);
 	int *vector = new int[n];
@@ -19,9 +19,10 @@ void inputVector(int n) {
 		f << vector[i] << "\t";
 	}
 	f.close();
+	return 0;
 }
 
-void findCoordinate (int n, double a, double b) {
+int findCoordinate (int n, double a, double b) {
 	ifstream f;
 	f.open("file.txt", ios::in);
 	int *vector = new int[n];
@@ -33,6 +34,7 @@ void findCoordinate (int n, double a, double b) {
 		}
 	}
 	f.close();
+	return 0;
 }
 
 
@@ -46,8 +48,14 @@ void main() {
 	cout << "How many vector coordinates will there be?" << endl;
 	int n;
 	cin >> n;
-	inputVector(n);
-	findCoordinate(n,a,b);
+
+	int (*s)(int) = NULL;
+	s = inputVector;
+	s(n);
+
+	int (*f)(int, double, double) = NULL;
+	f = findCoordinate;
+	f(n,a,b);
 
 	system("pause");
 }
