@@ -5,7 +5,7 @@
 using namespace std;
 
 void input(Complex &z){
-	cout << "Complex number has view: a+bi." << endl;
+	cout << "Enter Re z and Im z:" << endl;
 	cout << "Enter a: ";
 	cin >> z.a;
 	cout << "Enter b: ";
@@ -13,7 +13,13 @@ void input(Complex &z){
 }
 
 void show(Complex z) {
-	cout << "Complex number: " << z.a << " + " << z.b << "i" << endl;
+	cout << z.a;
+	if (z.b >= 0) {
+		cout << " + " << z.b << "i;" << endl;
+	}
+	else {
+		cout << " " << z.b << "i;" << endl;
+	}
 }
 
 bool isTheSame(Complex a, Complex b) {
