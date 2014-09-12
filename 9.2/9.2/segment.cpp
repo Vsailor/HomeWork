@@ -7,15 +7,15 @@ using namespace std;
 void setEmpty(Segment &t) {
 	t.a = NULL;
 	t.b = NULL;
-	t.empty = true;
+	t.isNotEmpty = false;
 }
 
 bool isEmpty(Segment t) {
-	if (t.empty) {
-		return true;
+	if (t.isNotEmpty) {
+		return false;
 	}
 	else {
-		return false;
+		return true;
 	}
 }
 
@@ -25,17 +25,25 @@ void setSegmentLength(Segment &t, double leftBorder, double rightBorder) {
 }
 
 void setIntersectionLength(Segment &t, Segment t1, Segment t2) {
-	if (t1.a < t2.a) {
-		t.a = t2.a;
+	if ((t1.a > t2.a && t1.a < t2.b) || (t1.b > t2.a && t1.b < t2.b)) {
+		if ((t1.a > t2.a && t1.a < t2.b) && (t1.b > t2.a && t1.b < t2.b)) {
+			t.a = t1.a;
+			t.b = t1.b;
+		} else if ((t1.a > t2.a && t1.a < t2.b)) {
+			t.b = t2.b;
+			t.a = t1.a;
+		} else if ((t1.b > t2.a && t1.b < t2.b)) {
+			t.b = t1.b;
+			t.a = t2.a;
+		}
+		
 	}
-	else {
+	else if (t1.a == t2.a && t1.b == t2.b) {
 		t.a = t1.a;
-	}
-
-	if (t2.b > t1.b) {
 		t.b = t1.b;
 	}
 	else {
-		t.b = t2.b;
+		setEmpty(t);
 	}
+
 }
