@@ -62,12 +62,20 @@ void main() {
 	cin >> n;
 	double **coeficients = inputCoeficients(n);
 	Segment **mas = solveInequality(coeficients, n);
-	cout << "These are not roots:" << endl;
+	bool haveRoots = false;
 	for (int i = 0; i < n; i++) {
 		for (int k = 0; k < n; k++) {
-			if (mas[i][k].isNotEmpty && mas[i][k].a != mas[i][k].b)
+			if (mas[i][k].isNotEmpty && mas[i][k].a != mas[i][k].b) {
+				if (!haveRoots) {
+					cout << "These are not roots:" << endl;
+					haveRoots = true;
+				}
 				cout << "(" << mas[i][k].a << "; " << mas[i][k].b << ") " << endl;
+			}
 		}
+	}
+	if (!haveRoots) {
+		cout << "No roots" << endl;
 	}
 	system("pause");
 }
