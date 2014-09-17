@@ -6,12 +6,14 @@ using namespace std;
 
 char maxSymbol(Set a) {
 	int max = 0;
-	for (int i = 1; i < charSize; i++) {
-		if (max > a.set[i]) {
+	int maxIndex = 0;
+	for (int i = 0; i < charSize; i++) {
+		if (max < a.set[i]) {
 			max = a.set[i];
+			maxIndex = i;
 		}
 	}
-	return max;
+	return char(maxIndex);
 }
 
 string inputString() {
@@ -22,34 +24,73 @@ string inputString() {
 }
 
 void fillSet(Set &a, string s) {
-	char index;
 	for (int i = 0; i < s.length(); i++) {
-		for (int k = 1; k < charSize; k++) {
-			index = k;
-			if (s[i] == index) {
+		for (int k = 0; k < charSize; k++) {
+			if (s[i] == char(k)) {
 				a.set[k]++;
-				cout << k;
 			}
 		}
 	}
 }
 
 void showSet(Set set) {
-	for (int i = 1; i < charSize; i++) {
+	for (int i = 0; i < charSize; i++) {
 		cout << set.set[i] << endl;
 	}
 }
 
+bool isSimilar(string s1, string s2) {
+	Set set1, set2;
+	setEmpty(set1);
+	setEmpty(set2);
+	fillSet(set1,s1);
+	fillSet(set2,s2);
+	for (int i=0; i<charSize; i++) {
+		if (set1.set[i] != set2.set[i]) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool isIncluded(string s1, string s2) {
+	Set set1, set2;
+	setEmpty(set1);
+	setEmpty(set2);
+	fillSet(set1,s1);
+	fillSet(set2,s2);
+	for (int i=0; i<charSize; i++) {
+		if ((set1.set[i] != set2.set[i])) {
+			if (set1.set[i]<set2.set[i]) {
+				return false;
+			}
+		}
+	}
+}
 
 void main() {
 	Set set;
 	setEmpty(set);
 	string s = inputString();
-	//fillSet(set, s);
-	//cout << set.set[1];//maxSymbol(set);
-	char a;
-	for (int i = 0; i < 255; i++) {
-		
+	fillSet(set, s);
+	cout << maxSymbol(set) << endl;
+	string s1,s2;
+	s1 = inputString();
+	s2 = inputString();
+	
+	if (isSimilar(s1,s2)) {
+		cout << s1 << " is similar to " << s2 << endl;
+	} else {
+		cout << s1 << " isn't similar to " << s2 << endl;
 	}
+	
+	if (isIncluded(s1,s2)) {
+		cout << s1 << " are included into " << s2 << endl;
+	} else {
+		cout << s1 << " aren't included into " << s2 << endl;
+	}
+
+
 	system("pause");
 }
