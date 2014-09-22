@@ -1,7 +1,7 @@
 #include "stack.h"
 #include <iostream>
 void main() {
-	stack s;
+	stack* s;
 	Init(s);
 	Input(s);
 	Output(s);
