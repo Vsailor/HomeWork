@@ -1,8 +1,10 @@
 #include "stack.h"
-
-int main() {
+#include <iostream>
+void main() {
 	stack s;
 	Init(s);
-	Push(s, 'A');
-	Push(s, '1');
+	Input(s);
+	Output(s);
+	std::cout << std::endl;
+	system("pause");
 }

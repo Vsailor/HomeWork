@@ -5,7 +5,9 @@ struct selem {
 	stack next;
 };
 
-extern int Init(stack &s);
-extern int Empty(stack s);
-extern int Push(stack &s, char c);
-extern int Pop(stack &s);
+extern void Init(stack &s);
+extern bool Empty(stack s);
+extern void Push(stack &s, char c);
+extern char Pop(stack &s);
+extern void Input(stack &s);
+extern void Output(stack s);
