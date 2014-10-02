@@ -9,7 +9,7 @@ struct queue {
 };
 
 extern void Init(queue*& q);
-extern bool isEmpty(queue q);
+extern bool isEmpty(queue*& q);
 extern void Add(queue*& q, int n);
 extern int Take(queue*& q);
 extern void Output(queue*& q);

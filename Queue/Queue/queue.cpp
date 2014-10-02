@@ -7,23 +7,31 @@ void Init(queue*& q) {
 	q->end = NULL;
 }
 
-bool isEmpty(queue q) {
-	if (q.begin == NULL && q.end == NULL) {
+bool isEmpty(queue*& q) {
+	if (q->begin == NULL && q->end == NULL) {
 		return true;
 	}
 	return false;
 }
 
 void Add(queue*& q, int n) {
-	qref* p;
-	p = new qref;
+	/*qref* p = new qref;
 	p->d = n;
 	p->next = NULL;
-	q->end = p;
+	if (q->begin == NULL) {
+		q->begin = p;
+		q->begin->next = q->end;
+		q->end = p;
+	}
+	else {
+		q->end->next = p;
+	}*/
+
+
 }
 
 int Take(queue*& q) {
-	if (isEmpty(*q)) {
+	if (isEmpty(q)) {
 		cout << "Queue is empty" << endl;
 	}
 	else {
@@ -35,9 +43,10 @@ int Take(queue*& q) {
 			return c;
 		}
 		else {
+			int c = q->begin->d;
 			qref* p = q->begin;
+			// освободить память q->begin
 			q->begin = q->begin->next;
-			int c = p->d;
 			delete[] p;
 			return c;
 		}
@@ -46,7 +55,7 @@ int Take(queue*& q) {
 }
 
 void Output(queue*& q) {
-	while (q != NULL) {
-		cout << Take(q);
+	while (!isEmpty(*&q)) {
+		cout << Take(*&q);
 	}
 }
