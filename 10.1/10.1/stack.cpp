@@ -1,6 +1,7 @@
 #include "stack.h"
 #include <iostream>
 using namespace std;
+
 void Push(stack &s, int c) {
 	stack p;
 	p = new selem;
