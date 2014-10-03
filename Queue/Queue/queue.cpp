@@ -20,11 +20,9 @@ void Add(queue*& q, int n) {
 	a->d=n;
 	a->next=NULL;
 	if (q->end == NULL) {
-		q->begin = new qref;
 		q->end = new qref;
 		q->begin = new qref;
 		q->begin = a;
-
 	}
 	q->end->next=a;
 	q->end = a;
