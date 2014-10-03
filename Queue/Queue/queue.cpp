@@ -8,7 +8,7 @@ void Init(queue*& q) {
 }
 
 bool isEmpty(queue*& q) {
-	if (q->begin == NULL && q->end == NULL) {
+	if (q->begin == NULL) {
 		return true;
 	}
 	return false;
@@ -45,7 +45,9 @@ int Take(queue*& q) {
 }
 
 void Output(queue*& q) {
-	while (!isEmpty(*&q)) {
-		cout << Take(*&q);
+	while (!isEmpty(q)) {
+		cout << Take(q);
 	}
 }
+
+

@@ -10,12 +10,9 @@ void main() {
 	Add(q, 2);
 	Add(q, 3);
 	Add(q, 4);
-	//cout << Take(q) << Take(q);
-	//Output(q);
-	/*Output(q);
+
 	Output(q);
-	Output(q);
-	Output(q);*/
+
 
 	system("pause");
 }
