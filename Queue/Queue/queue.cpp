@@ -15,43 +15,33 @@ bool isEmpty(queue*& q) {
 }
 
 void Add(queue*& q, int n) {
-	/*qref* p = new qref;
-	p->d = n;
-	p->next = NULL;
-	if (q->begin == NULL) {
-		q->begin = p;
-		q->begin->next = q->end;
-		q->end = p;
+
+	qref* a = new qref;
+	a->d=n;
+	a->next=NULL;
+	if (q->end == NULL) {
+		q->begin = new qref;
+		q->end = new qref;
+		q->begin = new qref;
+		q->begin = a;
+
 	}
-	else {
-		q->end->next = p;
-	}*/
+	q->end->next=a;
+	q->end = a;
 
 
 }
 
 int Take(queue*& q) {
-	if (isEmpty(q)) {
-		cout << "Queue is empty" << endl;
-	}
-	else {
+	int n=q->begin->d;
+	qref* k = new qref;
+	k->d=q->begin->d;
+	k->next=q->begin->next;
 
-		if (q->begin == q->end) {
-			int c = q->begin->d;
-			q->begin = NULL;
-			q->end = NULL;
-			return c;
-		}
-		else {
-			int c = q->begin->d;
-			qref* p = q->begin;
-			// освободить память q->begin
-			q->begin = q->begin->next;
-			delete[] p;
-			return c;
-		}
-	}
-	return 0;
+	q->begin=q->begin->next;
+	k->next=NULL;
+	delete[] k->next;
+	return n;
 }
 
 void Output(queue*& q) {
