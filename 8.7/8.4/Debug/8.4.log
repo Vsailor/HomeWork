@@ -1,14 +1,14 @@
-﻿Сборка начата 28.09.2014 23:43:09.
-     1>Проект "C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\8.4\8.4.vcxproj" в узле 2 (целевые объекты Build).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (8.4.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿Build started 05.10.2014 0:12:30.
+     1>Project "C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\8.4\8.4.vcxproj" on node 2 (Build target(s)).
+       Project file contains ToolsVersion="12.0". This toolset is unknown or missing. You may be able to resolve this by installing the appropriate .NET Framework for this toolset. Treating the project as if it had ToolsVersion="4.0".
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "Исходный код.cpp"
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "Исходный код.cpp"
          Исходный код.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\Debug\8.7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\Debug\8.7.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\Debug\8.7.lib" /MACHINE:X86 "Debug\Исходный код.obj"
-         8.4.vcxproj -> C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\Debug\8.7.exe
-     1>Сборка проекта "C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\8.7\8.4\8.4.vcxproj" завершена (целевые объекты Build).
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\Debug\8.7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\Debug\8.7.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\Debug\8.7.lib" /MACHINE:X86 "Debug\Исходный код.obj"
+         8.4.vcxproj -> C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\Debug\8.7.exe
+     1>Done Building Project "C:\Users\Иван\Documents\Visual Studio 2012\Projects\HomeWork\8.7\8.4\8.4.vcxproj" (Build target(s)).
 
-Сборка успешно завершена.
+Build succeeded.
 
-Затраченное время: 00:00:01.17
+Time Elapsed 00:00:01.72

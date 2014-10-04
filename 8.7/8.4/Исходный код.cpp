@@ -4,12 +4,12 @@
 
 using namespace std;
 
-void writeFile(string fileName) {
+void writeFile(string fileName, int& n) {
 	ofstream f(fileName);
 	cout << "How many numbers do you want?" << endl;
-	int n;
 	cin >> n;
 	int number;
+	cout << "Type numbers:" << endl;
 	for (int i = 0; i < n; i++) {
 		cin >> number;
 		f << number << "\n";
@@ -28,56 +28,49 @@ void outputFile(string fileName) {
 	cout << endl;
 }
 
-void getC(string f, string g) {
-	ifstream A(f);
-	ofstream C("c");
-	int a;
-	int b;
-	ifstream included("c");
-	int incl = 0;
-	while (!A.eof()) {
-		A >> a;
-		ifstream B(g);
-		while (!B.eof()) {
-			B >> b;
-			if ((incl != a) && (incl != b)) {
-				if (a <= b) {
-					ofstream search("c");
-					int s=0;
-					bool inc = 0;
-					while (!search.eof()) {
-						search << s;
-						if (a == s)
-							inc = 1;
-					}
-					if (inc == 0) {
-						C << a;
-						incl = a;
-					}
-					search.close();
-				}
-				else {
-					ofstream search("c");
-					int s=0;
-					bool inc = 0;
-					while (!search.eof()) {
-						search << s;
-						if (a == s)
-							inc = 1;
-					}
-					if (inc == 0) {
-						C << b;
-						incl = b;
-					}
-					search.close();
-				}
-			}
-		
-		}
-
+void makeUnion(string A, int n, string B, int k, string fileName) {
+	ofstream f(fileName);
+	ifstream fA(A);
+	ifstream fB(B);
+	int* a = new int[n];
+	int* b = new int[k];
+	int s;
+	for (int i=0; i<n; i++) {
+		fA >> s;
+		a[i] = s;
 	}
-	included.close();
-	A.close();
+	
+	for (int i=0; i<k; i++) {
+		fB >> b[i];
+	}
+	int* c = new int[n+k];
+	for (int i=0; i<n; i++) {
+		c[i] = a[i];
+	}
+	for (int i=n, t=0; i<n+k; i++, t++) {
+		c[i] = b[t];
+	}
+	int* hmas = new int[n+k];
+	bool repeat;
+	int size = 0;
+	for (int i=0; i<n+k; i++) {
+		repeat = false;
+		for (int j=0; j<size; j++) {
+			if (c[i] == hmas[j]) {
+				repeat = true;
+			}
+		}
+		if (!repeat) {
+			hmas[size] = c[i];
+			size++;
+		}
+	}
+	for (int i=0; i<size; i++) {
+		f << hmas[i] << "\n";
+	}
+	f.close();
+	fA.close();
+	fB.close();
 }
 
 
@@ -86,16 +79,14 @@ void getC(string f, string g) {
 void main() {
 	string F;
 	cout << "Enter first file name: ";
-	getline(cin,F);
+	getline(cin, F);
 	string G;
 	cout << "Enter second file name: ";
 	getline(cin, G);
-	writeFile(F);
-	writeFile(G);
-	outputFile(F);
-	outputFile(G);
-	getC(F, G);
-	outputFile("c");
-
+	int n = 0;
+	writeFile(F, n);
+	int k = 0;
+	writeFile(G, k);
+	makeUnion(F, n, G, k, "C.txt");
 	system("pause");
 }
