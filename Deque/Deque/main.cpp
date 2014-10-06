@@ -4,7 +4,11 @@
 using namespace std;
 
 void main() {
-
+	deque* d;
+	Init(d);
+	AddEnd(d, 1);
+	AddEnd(d, 2);
+	AddEnd(d, 3);
 
 
 	system("pause");

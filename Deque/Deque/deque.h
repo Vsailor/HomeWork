@@ -1,6 +1,7 @@
 struct dref {
 	int d;
 	dref* next;
+	dref* prev;
 };
 
 struct deque {

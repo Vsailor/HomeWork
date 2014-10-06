@@ -14,20 +14,19 @@ bool isEmpty(deque*& q) {
 	return false;
 }
 
-void Add(deque*& q, int n) {
-
+void AddEnd(deque*& q, int n) {
 	dref* a = new dref;
 	a->d = n;
-	a->next = NULL;
+	a->next = NULL; 
+	a->prev = q->end;
 	if (q->end == NULL) {
 		q->end = new dref;
 		q->begin = new dref;
 		q->begin = a;
 	}
 	q->end->next = a;
+	a->prev = q->end; 
 	q->end = a;
-
-
 }
 
 int Take(deque*& q) {
