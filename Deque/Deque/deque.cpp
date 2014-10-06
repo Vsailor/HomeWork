@@ -29,6 +29,23 @@ void AddEnd(deque*& q, int n) {
 	q->end = a;
 }
 
+void AddBegin(deque*& q, int n) {
+	dref* a = new dref;
+	a->d = n;
+	a->prev = NULL;
+	if (q->end == NULL) {
+		q->end = new dref;
+		q->begin = new dref;
+		q->begin = a;
+	}
+	else {
+		a->next = q->begin;
+	}
+	q->end->next = a;
+	a->prev = q->end;
+	q->end = a;
+}
+
 int Take(deque*& q) {
 	int n = q->begin->d;
 	dref* k = new dref;
