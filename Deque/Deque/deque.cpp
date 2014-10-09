@@ -33,7 +33,7 @@ void AddBegin(deque*& q, int n) {
 	dref* a = new dref;
 	a->d = n;
 	a->prev = NULL;
-	if (q->end == NULL) {
+	if (q->begin == NULL) {
 		q->end = new dref;
 		q->begin = new dref;
 		q->begin = a;
@@ -41,9 +41,8 @@ void AddBegin(deque*& q, int n) {
 	else {
 		a->next = q->begin;
 	}
-	q->end->next = a;
-	a->prev = q->end;
-	q->end = a;
+	a->prev = NULL;
+	q->begin = a;
 }
 
 int Take(deque*& q) {
