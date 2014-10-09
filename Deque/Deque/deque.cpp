@@ -45,7 +45,7 @@ void AddBegin(deque*& q, int n) {
 	q->begin = a;
 }
 
-int Take(deque*& q) {
+int TakeBegin(deque*& q) {
 	int n = q->begin->d;
 	dref* k = new dref;
 	k->d = q->begin->d;
@@ -57,9 +57,19 @@ int Take(deque*& q) {
 	return n;
 }
 
+int TakeEnd(deque*& q) {
+	int n = q->end->d;
+	dref* d = new dref;
+	d = q->end;
+	q->end = q->end->prev;
+	q->end->next = NULL;
+	delete[] d;
+	return n;
+}
+
 void Output(deque*& q) {
 	while (!isEmpty(q)) {
-		cout << Take(q);
+		cout << TakeBegin(q) << endl;
 	}
 }
 

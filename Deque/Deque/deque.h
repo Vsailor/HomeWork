@@ -13,5 +13,6 @@ extern void Init(deque*& q);
 extern bool isEmpty(deque*& q);
 extern void AddBegin(deque*& q, int n);
 extern void AddEnd(deque*& q, int n);
-extern int Take(deque*& q);
+extern int TakeBegin(deque*& q);
+extern int TakeEnd(deque*& q);
 extern void Output(deque*& q);
