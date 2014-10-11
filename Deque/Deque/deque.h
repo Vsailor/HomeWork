@@ -16,3 +16,4 @@ extern void AddEnd(deque*& q, int n);
 extern int TakeBegin(deque*& q);
 extern int TakeEnd(deque*& q);
 extern void Output(deque*& q);
+extern void Invers(deque*& q);

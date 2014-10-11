@@ -9,9 +9,8 @@ void main() {
 	AddEnd(d, 1);
 	AddEnd(d, 2);
 	AddEnd(d, 3);
-	cout << TakeBegin(d);
-	cout << TakeEnd(d);
-	cout << TakeBegin(d);
+	Invers(d);
+	Output(d);
 
 
 	system("pause");

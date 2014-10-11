@@ -8,7 +8,7 @@ void Init(deque*& q) {
 }
 
 bool isEmpty(deque*& q) {
-	if (q->begin == NULL) {
+	if (q->begin == NULL || q->end == NULL) {
 		return true;
 	}
 	return false;
@@ -58,12 +58,24 @@ int TakeBegin(deque*& q) {
 }
 
 int TakeEnd(deque*& q) {
-	int n = q->end->d;
-	dref* d = new dref;
-	d = q->end;
-	q->end = q->end->prev;
-	q->end->next = NULL;
-	delete[] d;
+	int n;
+	if (q->begin == q->end) {
+		deque* d = q;
+		n = q->begin->d;
+		q->begin = NULL;
+		q->end = NULL;
+	}
+	else {
+
+		n = q->end->d;
+		dref* d = new dref;
+
+		d = q->end;
+		q->end = q->end->prev;
+		q->end->next = NULL;
+		delete[] d;
+	}
+
 	return n;
 }
 
@@ -71,6 +83,17 @@ void Output(deque*& q) {
 	while (!isEmpty(q)) {
 		cout << TakeBegin(q) << endl;
 	}
+}
+
+void Invers(deque*& q) {
+	deque* s;
+	Init(s);
+	int count = 0;
+	while (!isEmpty(q)) {
+		count = TakeEnd(q);
+		AddEnd(s, count);
+	}
+	q = s;
 }
 
 
