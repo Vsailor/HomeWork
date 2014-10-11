@@ -96,4 +96,28 @@ void Invers(deque*& q) {
 	q = s;
 }
 
+void concat(deque*& a, deque*& b) {
+	while (!isEmpty(b)) {
+		AddEnd(a, TakeBegin(b));
+	}
+}
 
+//bool isEquals(deque*& a, deque*& b) {
+//	deque* new_a;
+//	deque* new_b;
+//	Init(new_a);
+//	Init(new_b);
+//	while (!isEmpty(a) && !isEmpty(b)) {
+//		if (!isEmpty(a)) {
+//			AddEnd(new_a, TakeBegin(a));
+//		}
+//		if (!isEmpty(b)) {
+//			AddEnd(new_b, TakeBegin(b));
+//		}
+//		if (new_a->end->d != new_b->end->d) {
+//
+//			return false;
+//		}
+//		
+//	}
+//}
