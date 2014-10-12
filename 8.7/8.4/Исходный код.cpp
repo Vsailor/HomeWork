@@ -100,10 +100,9 @@ void sortC() {
 		}
 	}
 	ofstream newc("C.txt");
-	cout << endl;
+
 	for (int i = 0; i < count; i++) {
-		cout << mas[i] << endl;
-		newc << mas[i];
+		newc << mas[i] << endl;
 	}
 	newc.close();
 }
