@@ -73,6 +73,40 @@ void makeUnion(string A, int n, string B, int k, string fileName) {
 	fB.close();
 }
 
+void sortC() {
+	ifstream cCount("C.txt");
+	int a;
+	int count = 0;
+	while (!cCount.eof()) {
+		cCount >> a;
+		count++;
+	}
+	count -= 1;
+	cCount.close();
+	ifstream c("C.txt");
+	int* mas = new int[count];
+	for (int i = 0; i < count; i++) {
+		c >> mas[i];
+	}
+	c.close();
+	int save = mas[0];
+	for (int i = 0; i < count-1; i++) {
+		for (int j = 0; j < count-1; j++) {
+			if (mas[j] > mas[j+1]) {
+				save = mas[j];
+				mas[j] = mas[j + 1];
+				mas[j + 1] = save;
+			}
+		}
+	}
+	ofstream newc("C.txt");
+	cout << endl;
+	for (int i = 0; i < count; i++) {
+		cout << mas[i] << endl;
+		newc << mas[i];
+	}
+	newc.close();
+}
 
 
 
@@ -88,5 +122,6 @@ void main() {
 	int k = 0;
 	writeFile(G, k);
 	makeUnion(F, n, G, k, "C.txt");
+	sortC();
 	system("pause");
 }
