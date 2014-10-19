@@ -46,3 +46,9 @@ list input() {
 	return l;
 }
 
+void output(list l) {
+	while (!isEmpty(l)) {
+		cout << l->d;
+		l = l->next;
+	}
+}
