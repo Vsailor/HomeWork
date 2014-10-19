@@ -22,7 +22,7 @@ void main() {
 	while (!Empty(a)) {
 		t = Pop(a);
 		while (!isEmpty(t)) {
-			cout << Head(t);
+			cout << Head(t) << endl;
 			t = Tail(t);
 		}
 	}

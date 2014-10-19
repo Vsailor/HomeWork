@@ -1,4 +1,4 @@
-﻿Build started 19.10.2014 14:57:56.
+﻿Build started 19.10.2014 17:15:29.
      1>Project "C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\List\List\List.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -12,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.16
+Time Elapsed 00:00:05.68
