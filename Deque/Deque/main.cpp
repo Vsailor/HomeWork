@@ -4,8 +4,8 @@
 using namespace std;
 
 void main() {
-	deque* d;
-	deque* q;
+	deque d;
+	deque q;
 	Init(d);
 	Init(q);
 	AddEnd(d, 1);
