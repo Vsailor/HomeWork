@@ -1,4 +1,4 @@
-﻿Build started 20.10.2014 12:04:39.
+﻿Build started 26.10.2014 11:59:14.
      1>Project "C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\ListWithCurrentElement\ListWithCurrentElement\ListWithCurrentElement.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.97
+Time Elapsed 00:00:00.93

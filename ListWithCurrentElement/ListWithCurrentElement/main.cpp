@@ -10,5 +10,6 @@ void main() {
 	Insert(a, 2);
 	Insert(a, 3);
 	Insert(a, 4);
+	Delete(a);
 	system("pause");
 }

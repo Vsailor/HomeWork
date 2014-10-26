@@ -27,35 +27,50 @@ int getCurrent(list l) {
 }
 
 refl findPrev(list &l) {
-	if (l.current == NULL || l.current->next == NULL) {
-		return NULL;
+	refl p;
+
+	if (l.begin == l.current) {
+		p = NULL;
 	}
-	list a;
-	Init(a);
-	a = l;
-	while (a.begin->next != l.current) {
-		a.begin = a.begin->next;
+	else
+	{
+		p = l.begin;
+		while (p->next != l.current)
+			p = p->next;
 	}
-	l = a;
+	return p;
 }
 
 void Insert(list &l, int n) {
-	refl e = new element;
-	if (emptyEnd(l)) {
-		e->n = n;
-		e->next = NULL;
-		l.begin = e;
-		l.current = e;
+	refl p;
+
+	p = new element;
+	p->n = n;
+	p->next = l.current;
+	if (l.begin == l.current) {
+		l.begin = p;
 	}
-	else if (l.begin->next == NULL) {
-		e->n = n;
-		e->next = l.begin;
-		l.current = l.begin;
-		l.begin = e;
+	else findPrev(l)->next = p;
+}
+
+void Delete(list &l)
+{
+	refl p;
+
+	if (l.current == NULL)
+	{
+		cout << "List is empty";
+		return;
+	}
+	p = l.current;
+	if (l.begin == p) {
+		l.begin = l.current->next;
 	}
 	else {
-		e->next = NULL;
-		e->n = n;
-		l.current->next = e;
+		findPrev(l)->next = l.current->next;
 	}
+
+	l.current = l.current->next;
+	delete[] p;
+	/* ашё. 10.22 с), у) */
 }
