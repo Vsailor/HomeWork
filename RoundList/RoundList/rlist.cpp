@@ -8,15 +8,17 @@ void Init(rlist& r) {
 
 int Length(rlist r) {
 	int count = 0;
+	rlist b = r;
 	if (r == NULL) {
 		return count;
 	}
 	else {
 		do {
 			count++;
-			
-		} while ()
+			r = r->next;
+		} while (r != b);
 	}
+	return count;
 }
 
 void Insert(rlist& r, int n) {
@@ -31,4 +33,26 @@ void Insert(rlist& r, int n) {
 		r->n = n;
 	}
 	r = a;
+}
+
+int cur(rlist r) {
+	return r->n;
+}
+
+void Delete(rlist& r) {
+	rlist a;
+	if (Length(r) == 1) {
+		a = r;
+		Init(r);
+		delete a;
+	}
+	else {
+		a = r->next;
+		*r = *a;
+		delete a;
+	}
+}
+
+void toNext(rlist& r) {
+	r=r->next;
 }

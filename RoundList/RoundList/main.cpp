@@ -9,6 +9,11 @@ void main() {
 	Insert(a, 2);
 	Insert(a, 3);
 	Insert(a, 4);
+	while (Length(a) != 0) {
+		cout << cur(a);
+		toNext(a);
+	}
+	cout << Length(a);
 
 	system("pause");
 }
