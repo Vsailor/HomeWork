@@ -74,3 +74,11 @@ void Delete(list &l)
 	delete[] p;
 	/* ашё. 10.22 с), у) */
 }
+
+void outPut(list l) {
+	toFirst(l);
+	while (!emptyEnd(l)) {
+		cout << l.current->n << endl;
+		l.current = l.current->next;
+	}
+}

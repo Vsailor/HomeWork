@@ -18,3 +18,4 @@ extern int getCurrent(list l);
 extern refl findPrev(list &l);
 extern void Insert(list &l, int n);
 extern void Delete(list &l);
+extern void outPut(list l);
