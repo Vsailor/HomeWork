@@ -4,36 +4,28 @@ using namespace std;
 
 btree input(btree t) {
 	int c;
+
+	if (t == NULL) {
+		t = new element;
+		t->ls = NULL;
+		t->rs = NULL;
+		t = input(t);
+		if (t->d == 0)
+			return t;
+	}
 	cin >> c;
-	if (c != 0) {
-		if (t == NULL) {
-			t = new element;
-			t->ls = NULL;
-			t->rs = NULL;
-		}
-		if (t->ls == NULL) {
-			t->d = c;
-			t = input(t->ls);
-		}
-		if (t->rs == NULL) {
-			t->d = c;
-			t = input(t->rs);
-		}
-
+	if (t->ls == NULL) {
+		t->d = c;
+		if (c == 0)
+			return t;
+		t = input(t->ls);
 	}
-	else {
-		//if (t->ls!=NULL) {
-		//	if (t->rs!=NULL) {
-		//		cout << "DONE!";
-		//		return NULL;
-		//	} else {
-		//		return input(t->rs);
-		//	}
-		//} else {
-		//	return input(t->ls);
-		//}
+	if (t->rs == NULL) {
+		t->d = c;
+		if (c == 0)
+			return t;
+		t = input(t->rs);
 	}
-
 	return t;
 }
 
