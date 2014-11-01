@@ -1,4 +1,4 @@
-﻿Сборка начата 27.10.2014 12:05:22.
+﻿Сборка начата 01.11.2014 21:29:57.
      1>Проект "C:\Users\Ivan\Desktop\Универ\Лабы\HomeWork\RoundList\RoundList\RoundList.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -11,4 +11,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:00.85
+Затраченное время: 00:00:00.98
