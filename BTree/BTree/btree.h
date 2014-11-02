@@ -12,3 +12,5 @@ extern btree leftSon(btree t);
 extern btree rigthSon(btree t);
 extern btree makeTree(int n);
 extern void Print(btree t);
+extern bool Search(btree t, int n);
+extern int Height(btree t);

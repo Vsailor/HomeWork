@@ -83,3 +83,33 @@ void Print(btree t)
 	cout << " | ";
 }
 
+bool Search(btree t, int n)
+{
+	bool a1=0, a2=0;
+	if (t != NULL)
+	{
+		a1 = Search(t->ls, n);
+		if (t->d == n) {
+			return 1;
+		}
+		a2 = Search(t->rs, n);
+	}
+	return a1 || a2;
+}
+
+int Height(btree t) 
+{
+	int l = 0;
+	int r = 0;
+	if (t != NULL)
+	{
+		l = Height(t->ls);
+		r = Height(t->rs);
+	}
+	if (l > r) {
+		return ++l;
+	}
+	else {
+		return ++r;
+	}
+}
