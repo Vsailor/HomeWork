@@ -10,3 +10,5 @@ extern bool isEmpty(btree t);
 extern int root(btree t);
 extern btree leftSon(btree t);
 extern btree rigthSon(btree t);
+extern btree makeTree(int n);
+extern void Print(btree t);
