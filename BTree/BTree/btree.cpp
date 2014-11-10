@@ -1,5 +1,6 @@
 #include <iostream>
 #include "btree.h"
+#define ZERO -1
 using namespace std;
 
 btree Init() {
@@ -71,8 +72,15 @@ btree makeTree(int n) {
 	}
 	return t;
 }
-
 void Print(btree t)
+{
+	if (t != NULL) {
+		cout << t->d<<"   ";
+		Print(t->rs);
+		Print(t->ls);
+	}
+}
+/*void Print(btree t)
 {
 	if (t != NULL)
 	{
@@ -82,7 +90,7 @@ void Print(btree t)
 	}
 	cout << " | ";
 }
-
+*/
 bool Search(btree t, int n)
 {
 	bool a1=0, a2=0;
@@ -99,17 +107,18 @@ bool Search(btree t, int n)
 
 int Height(btree t) 
 {
-	int l = 0;
-	int r = 0;
+	int l = ZERO;
+	int r = ZERO;
 	if (t != NULL)
 	{
 		l = Height(t->ls);
 		r = Height(t->rs);
 	}
 	if (l > r) {
-		return ++l;
+		return ++l;		
 	}
 	else {
 		return ++r;
+	
 	}
 }
